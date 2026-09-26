@@ -42,3 +42,9 @@ Recommendations: Craig Rinn and Kristin Robinson excerpts transcribed verbatim f
 ## GitHub Pages
 
 The Pages workflow detects the hosted URL prefix automatically, including project URLs and custom domains. For local previews, run `python3 build.py` without a prefix. To reproduce a project-path build, run `python3 build.py --base-path /deke.baley.org`.
+
+## Résumé-based content update
+
+The user supplied a 2018 résumé and two later CVs. They document Wilson and Neal Land Surveys (1993–2001; Crew Chief / Drafter / Plan Checker / Regional Office Manager), Lennon Trilogy Surveys (2001–2009; co-founder/owner), and Altus (2009–2018; branch management followed by business development, including responsibility across 17 geomatics offices). The CVs also document remote contract project management with GeoVerra. The source documents are not included in this public repository.
+
+GeoVerra start dates and contract status differ between LinkedIn and the CVs, so the site describes remote contract experience without asserting dates or current employment terms. Current software proficiency, financial growth and market-share figures remain unconfirmed and were not added.
