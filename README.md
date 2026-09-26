@@ -31,8 +31,8 @@ Set `published` to `true` when ready, run `python3 build.py`, and publish the up
 
 - User brief: desired AutoCAD drafting, plan checking and project management work; experience in civil, land development, oil/gas and geomatics.
 - https://www.c2innovate.com/our-c2-team — Deke's Project Manager / QA/QC role and supplied portrait.
-- https://www.c2innovate.com/ — business services and public business email.
+- https://www.c2innovate.com/ — business services.
 - https://www.geoverra.com/project/padcom-russell-mcauley-deposit/ — project context and attributed client quote. Team accomplishments are not presented as Deke's individual work.
 - https://www.linkedin.com/in/deke-baley/ — linked for visitors; its content could not be retrieved during authoring.
 
-Confirm preferred contact email and employment history with Deke before making the site public. No years-of-experience total, employment dates, licensing credentials or unverified software proficiency claims were invented. The company-wide 75 years of combined experience is deliberately not attributed to him. The site initially deploys privately for review.
+Contact email: deke@baley.org, supplied by the user. Confirm employment history with Deke before making the site public. No years-of-experience total, employment dates, licensing credentials or unverified software proficiency claims were invented. The company-wide 75 years of combined experience is deliberately not attributed to him. The site initially deploys privately for review.
