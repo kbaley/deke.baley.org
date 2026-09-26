@@ -35,6 +35,10 @@ Set `published` to `true` when ready, run `python3 build.py`, and publish the up
 - https://www.geoverra.com/project/padcom-russell-mcauley-deposit/ — project context and attributed client quote. Team accomplishments are not presented as Deke's individual work.
 - https://www.linkedin.com/in/deke-baley/ — linked for visitors; its content could not be retrieved during authoring.
 
-Contact email: deke@baley.org, supplied by the user. Confirm employment history with Deke before making the site public. No years-of-experience total, employment dates, licensing credentials or unverified software proficiency claims were invented. The company-wide 75 years of combined experience is deliberately not attributed to him. The current workflow is local-only. Do not deploy or enable GitHub Pages until explicitly requested. An earlier private Sites deployment exists but does not receive local changes.
+Contact email: deke@baley.org, supplied by the user. Confirm employment history with Deke before making the site public. No years-of-experience total, employment dates, licensing credentials or unverified software proficiency claims were invented. The company-wide 75 years of combined experience is deliberately not attributed to him. GitHub Pages publishes automatically when changes are pushed to main. The workflow builds the articles and uploads only dist. An earlier private Sites deployment exists but is not updated by this workflow.
 
 Recommendations: Craig Rinn and Kristin Robinson excerpts transcribed verbatim from the LinkedIn screenshot supplied by the user. Both are dated April 2018 and identify a direct reporting relationship. Links point to Deke’s profile; individual recommendation URLs were not supplied. Daymon Guillas’s existing quote was moved into the same section.
+
+## GitHub Pages
+
+The Pages workflow detects the hosted URL prefix automatically, including project URLs and custom domains. For local previews, run `python3 build.py` without a prefix. To reproduce a project-path build, run `python3 build.py --base-path /deke.baley.org`.

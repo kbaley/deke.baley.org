@@ -1,12 +1,15 @@
 """Build the static article index and article pages; no third-party packages required."""
-import json, re
+import argparse, json, re
 from pathlib import Path
 from html import escape
 from datetime import date
 
 ROOT = Path(__file__).resolve().parent
 
-def build():
+def build(base_path=""):
+    base_path = "/" + base_path.strip("/") if base_path.strip("/") else ""
+    def site_links(html):
+        return re.sub(r'(href|src)="/(?!/)', lambda m: m.group(1) + '="' + base_path + "/", html)
     home = (ROOT / 'content/home.html').read_text()
     articles = json.loads((ROOT / 'content/articles.json').read_text())
     published = [a for a in articles if a.get('published') is True]
@@ -31,7 +34,7 @@ def build():
         page = f'{head}</head><body><header class="header wrap"><a class="brand" href="/">Deke Baley</a><a href="/#articles">← All articles</a></header><main class="wrap article-body"><p class="eyebrow">FIELD NOTES / DEKE BALEY</p><h1>{title}</h1><time datetime="{a["date"]}">{formatted}</time>{body}<a class="text-link" href="/#contact">Connect with Deke ↗</a></main></body></html>'
         folder = ROOT / 'dist/articles' / a['slug']
         folder.mkdir(parents=True, exist_ok=True)
-        (folder / 'index.html').write_text(page)
+        (folder / 'index.html').write_text(site_links(page))
     # Remove only generated article pages whose records were removed or unpublished.
     for old in (ROOT / 'dist/articles').glob('*/index.html'):
         if old.parent.name not in slugs:
@@ -39,8 +42,10 @@ def build():
             old.parent.rmdir()
     if cards:
         home = re.sub(r'<div id="article-list">.*?</section>', '<div id="article-list">' + ''.join(cards) + '</div></section>', home, flags=re.S)
-    (ROOT / 'dist/index.html').write_text(home)
+    (ROOT / 'dist/index.html').write_text(site_links(home))
     print(f'Built homepage and {len(published)} published articles.')
 
 if __name__ == '__main__':
-    build()
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--base-path', default='', help='URL prefix for a GitHub Pages project site')
+    build(parser.parse_args().base_path)
